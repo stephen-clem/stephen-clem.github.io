@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal custom layer extensions */
+@layer base {
+  html { scroll-behavior: smooth; }
+}
+
+@layer utilities {
+  .gradient-text { @apply bg-gradient-to-r from-violet-600 to-fuchsia-600 dark:from-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent; }
+  .shadow-subtle { box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04); }
+  .animate-pulse-slow { animation: pulse 5s ease-in-out infinite; }
+  .animate-pulse-slower { animation: pulse 8s ease-in-out infinite; }
+  /* Game mode utilities */
+  .game-root { @apply relative; }
+  .game-root:before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 30% 30%, rgba(139,92,246,0.12), transparent 60%), radial-gradient(circle at 70% 70%, rgba(236,72,153,0.10), transparent 60%); pointer-events:none; }
+  .game-hero { @apply relative; }
+  .game-badge { @apply bg-slate-900/70 border border-violet-500/50 text-violet-200 backdrop-blur-sm; box-shadow:0 0 0 1px rgba(139,92,246,0.4), 0 0 8px -2px rgba(139,92,246,0.6); }
+  .game-heading { text-shadow:0 0 12px rgba(168,85,247,0.35),0 0 32px rgba(217,70,239,0.25); }
+  .game-card { @apply relative; }
+  .game-frame { @apply bg-slate-900/60 border border-violet-500/40 backdrop-blur-sm; box-shadow:0 0 0 1px rgba(139,92,246,0.35),0 0 22px -4px rgba(139,92,246,0.5); }
+  .game-chip { @apply bg-violet-500/15 text-violet-200 border border-violet-400/30 backdrop-blur-sm; }
+  .game-panel { @apply bg-slate-900/60 border border-violet-500/30 rounded-xl backdrop-blur-sm; box-shadow:0 0 0 1px rgba(139,92,246,0.25),0 0 18px -6px rgba(139,92,246,0.5); }
+  .game-grid { @apply relative; }
+  .game-scanlines:before { content:""; position:absolute; inset:0; background:repeating-linear-gradient(to bottom, rgba(255,255,255,0.04) 0 2px, transparent 2px 4px); mix-blend-mode:overlay; pointer-events:none; border-radius:inherit; }
+  .game-bar { @apply relative overflow-hidden; }
+  .game-bar-fill { background:linear-gradient(90deg, rgba(139,92,246,0.9), rgba(232,121,249,0.9)); box-shadow:0 0 0 1px rgba(139,92,246,0.5), 0 0 14px -2px rgba(139,92,246,0.9); }
+  .game-bar-fill:after { content:""; position:absolute; inset:0; background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%); mix-blend-mode:overlay; animation:barshine 3.5s linear infinite; }
+  .game-section-title { @apply flex items-center gap-2 font-semibold tracking-wide text-violet-300 uppercase text-xs; }
+  .game-section-title:before { content:""; @apply w-6 h-px bg-gradient-to-r from-violet-500 to-fuchsia-500; }
+  .game-section-title:after { content:""; @apply flex-1 h-px bg-slate-700/60; }
+  .game-divider { @apply h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent; }
+  .game-focus-ring { box-shadow:0 0 0 2px rgba(255,255,255,0.1),0 0 0 4px rgba(139,92,246,0.5); }
+  .game-focus-ring:focus-visible { outline:none; }
+  .game-outline { box-shadow:0 0 0 1px rgba(139,92,246,0.4),0 0 0 3px rgba(139,92,246,0.15),0 0 32px -6px rgba(139,92,246,0.5); }
+  .game-tag-grid { @apply relative; }
+  .game-tag-grid:before { content:""; position:absolute; inset:-1px; border-radius:inherit; padding:1px; background:linear-gradient(110deg, rgba(139,92,246,0.5), rgba(232,121,249,0.3)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
+  .game-glow { box-shadow:0 0 10px -2px rgba(139,92,246,0.8),0 0 28px -6px rgba(217,70,239,0.6); }
+  .game-text-glow { text-shadow:0 0 8px rgba(139,92,246,0.7),0 0 22px rgba(217,70,239,0.5); }
+  .game-breathing { animation:breathing 6s ease-in-out infinite; }
+}
+
+@keyframes pulse {
+  0%,100% { opacity:.9; transform: scale(1); }
+  50% { opacity:1; transform: scale(1.04); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  60% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes barshine {
+  0% { transform:translateX(-100%); }
+  60% { transform:translateX(100%); }
+  100% { transform:translateX(100%); }
+}
+
+@keyframes breathing {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.03); }
+}
