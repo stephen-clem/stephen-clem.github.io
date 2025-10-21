@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "deploy:root": "npm run build && cp dist/index.html ./index.html && cp -r dist/assets ./assets"
+    "deploy:root": "npm run build && cp dist/index.html ./index.html && cp -r dist/assets ./assets && cp public/* . 2>/dev/null || true"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
