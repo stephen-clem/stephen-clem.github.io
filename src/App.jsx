@@ -107,8 +107,8 @@ export default function App() {
   const [imgError, setImgError] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
 
-  // External image (can replace with local file in /public for reliability)
-  const portraitUrl = "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/456053365_10231329521194370_24548638188880072_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=qHsuPuABqNIQ7kNvwE0_7Rn&_nc_oc=Adl3HH5tyNKlsMQCuH-RTXYqqywmG3dUnBzxNRe3TozdNuPgXL7_x_OzAyQICN9Ul6Y&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=7nE3rXi6AWJFcm7jZe2ctA&oh=00_AfesdfjpJ0M3oigNS2YwGJeBIZKVgyxjfqBu3CIfWWFoBg&oe=68F4A57E";
+  // Local hero image
+  const portraitUrl = "/hero_image.jpg";
 
   useEffect(() => {
     const root = document.documentElement;
@@ -179,7 +179,7 @@ export default function App() {
                 className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[11px] font-medium uppercase tracking-wider shadow-subtle border border-violet-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-violet-700 dark:text-violet-300"
               >
                 <span className="h-2 w-2 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 animate-ping-slow" />
-                Building, Exploring, Enjoying the Ride
+                "Everybody Love Everybody" - Jackie Moon
               </Motion.div>
 
               <Motion.h2
@@ -188,14 +188,18 @@ export default function App() {
                 transition={{ delay: 0.15, duration: 0.7 }}
                 className="mt-8 text-4xl md:text-6xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white"
               >
-                Crafting{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 bg-gradient-to-r from-violet-600 to-fuchsia-600 dark:from-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent">
-                    Scalable
+                    Building
                   </span>
                   <span className="absolute -inset-1 rounded-lg bg-violet-500/10 blur-md" />
-                </span>{" "}
-                Software — and Enjoying Life Along the Way
+                </span>, Exploring, Enjoying the{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10 bg-gradient-to-r from-fuchsia-600 to-violet-600 dark:from-fuchsia-400 dark:to-violet-400 bg-clip-text text-transparent">
+                    Ride
+                  </span>
+                  <span className="absolute -inset-1 rounded-lg bg-fuchsia-500/10 blur-md" />
+                </span>
               </Motion.h2>
 
               <Motion.p
@@ -204,10 +208,7 @@ export default function App() {
                 transition={{ delay: 0.3, duration: 0.7 }}
                 className="mt-8 max-w-2xl mx-auto lg:mx-0 text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-300"
               >
-                I love making scalable software — but when I’m not coding, you’ll
-                probably find me running, biking, exploring new food spots,
-                or enjoying time with friends and family. Building things is my craft;
-                maintaining balance is the goal.
+                I love creating things that actually work — scalable software, new ideas, and good memories. When I'm not deep in code, I'm usually out running, biking, trying new food spots, or just hanging out with friends and family. I build because it's what I love — and I'm just here to debug life with good vibes.
               </Motion.p>
 
               <Motion.div
