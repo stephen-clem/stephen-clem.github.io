@@ -7,20 +7,6 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        violet: {
-          50: '#faf8ff',
-          100: '#f2ecff',
-          200: '#e6d9ff',
-          300: '#d1b8ff',
-          400: '#b48aff',
-          500: '#9254ff',
-          600: '#7a33f5',
-          700: '#6527cc',
-          800: '#5223a3',
-          900: '#431f82'
-        }
-      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif']
       },
