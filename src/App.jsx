@@ -362,9 +362,9 @@ export default function App() {
           <div className="grid gap-5 lg:grid-cols-3">
             {projects.map((project) => (
               <article key={project.name} className="rounded-[1.75rem] border-2 border-slate-950 bg-white p-6 shadow-[7px_7px_0_#000] transition hover:-translate-y-1 hover:shadow-[10px_10px_0_#000]">
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                   <h3 className="text-2xl font-black tracking-[-0.04em]">{project.name}</h3>
-                  <span className="shrink-0 rounded-full bg-amber-300 px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em]">
+                  <span className="self-start rounded-full bg-amber-300 px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em] sm:self-auto">
                     {project.status}
                   </span>
                 </div>
