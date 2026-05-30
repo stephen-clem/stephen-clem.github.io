@@ -37,6 +37,7 @@ const navItems = [
   ["Contact", "#contact"],
 ];
 
+
 const skillStyles = {
   Python: { icon: FaPython, color: "from-cyan-300 to-emerald-300" },
   Django: { icon: SiDjango, color: "from-emerald-300 to-lime-300" },
