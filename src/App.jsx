@@ -13,6 +13,8 @@ import {
   FaRunning,
   FaSun,
   FaUtensils,
+  FaGamepad,
+  FaLaptopCode,
 } from "react-icons/fa";
 import {
   SiAngular,
@@ -29,6 +31,7 @@ import "./App.css";
 
 const photoCards = portfolioData.pictures;
 const projects = portfolioData.projects;
+const lifeItems = portfolioData.life;
 
 const navItems = [
   ["Story", "#story"],
@@ -47,6 +50,7 @@ const skillStyles = {
   Docker: { icon: FaDocker, color: "from-cyan-300 to-blue-300" },
   Ruby: { icon: SiRuby, color: "from-rose-400 to-orange-300" },
   Rails: { icon: SiRubyonrails, color: "from-red-400 to-amber-300" },
+  "Ruby on Rails": { icon: SiRubyonrails, color: "from-red-400 to-amber-300" },
   AWS: { icon: FaAws, color: "from-amber-300 to-orange-300" },
   Kubernetes: { icon: SiKubernetes, color: "from-sky-400 to-blue-300" },
   Go: { icon: SiGo, color: "from-teal-300 to-cyan-300" },
@@ -58,44 +62,19 @@ const skills = portfolioData.skills.map((skill) => ({
   ...(skillStyles[skill.name] || { icon: FaReact, color: "from-cyan-300 to-emerald-300" }),
 }));
 
-const bentoCards = [
-  {
-    title: "Make the backend boring, please",
-    tag: "Rails / Django / Go",
-    text: "I like APIs, data models, auth flows, and integrations that do their job without becoming everyone’s problem later.",
-    className: "md:col-span-2 bg-cyan-300 text-slate-950",
-  },
-  {
-    title: "Frontend should feel obvious",
-    tag: "React / TS / Angular",
-    text: "Give me clean states, clear flows, good spacing, and code the next person can actually follow.",
-    className: "bg-amber-300 text-slate-950",
-  },
-  {
-    title: "Ship it, then keep it alive",
-    tag: "Docker / K8s / AWS",
-    text: "Docker, Kubernetes, AWS, logs, deploys, and writing down the weird parts before they bite twice.",
-    className: "bg-emerald-300 text-slate-950",
-  },
-  {
-    title: "Not just laptop mode",
-    tag: "Run / Bike / Eat",
-    text: "Running, biking, trying food spots, and being around friends and family keep me from becoming a stale commit.",
-    className: "md:col-span-2 bg-slate-100 text-slate-950",
-  },
-];
-
 const links = [
   ["GitHub", "https://github.com/stephen-clem", FaGithub],
-  ["LinkedIn", "https://www.linkedin.com/in/stephenclem/", FaLinkedin],
+  ["LinkedIn", "www.linkedin.com/in/stephenclem", FaLinkedin],
   ["Email", "mailto:stephenbclem@gmail.com?subject=Contact%20Me", FaEnvelope],
 ];
 
-const lifeIcons = [
-  ["Running", FaRunning],
-  ["Biking", FaBicycle],
-  ["Food hunts", FaUtensils],
-];
+const lifeIconMap = {
+  running: FaRunning,
+  biking: FaBicycle,
+  food: FaUtensils,
+  gaming: FaGamepad,
+  computer: FaLaptopCode,
+};
 
 function getInitialTheme() {
   if (typeof window === "undefined") return "dark";
@@ -177,7 +156,7 @@ export default function App() {
             transition={{ duration: 0.5 }}
             className="mb-6 w-fit rotate-[-1deg] rounded-full border-2 border-slate-950 bg-cyan-200 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-cyan-950 shadow-[4px_4px_0_#000]"
           >
-            Full-stack engineer, usually debugging something or planning food
+            "ELE! Everybody Love Everybody!" - Jackie Moon (Semi-Pro)
           </Motion.p>
 
           <Motion.h1
@@ -186,21 +165,27 @@ export default function App() {
             transition={{ delay: 0.08, duration: 0.65 }}
             className="max-w-5xl text-6xl font-black leading-[0.86] tracking-[-0.085em] sm:text-8xl lg:text-9xl"
           >
-            I build solid software and try to keep life fun.
+            I'm just trying to keep up.
           </Motion.h1>
 
-          <Motion.p
+          <Motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.65 }}
-            className="mt-8 max-w-3xl text-xl leading-9 text-slate-700 dark:text-stone-200"
+            className="mt-8 max-w-3xl space-y-5 text-xl leading-9 text-slate-700 dark:text-stone-200"
           >
-            I like turning messy ideas into software that people can actually use.
-            Ruby, Rails, Python, Django, React, TypeScript, Go, Docker,
-            Kubernetes, AWS, and PostgreSQL are the tools I usually reach for.
-            The goal is simple: make the thing work, make it clear, and avoid
-            creating future chaos.
-          </Motion.p>
+            <p>
+              I think simplicity is underrated. Whether I'm building software or
+              solving problems, I prefer clear, practical solutions over
+              unnecessary complexity.
+            </p>
+            <p>
+              When I'm not working, you'll usually find me spending time with my
+              spouse and our dogs, going for a run or a bike ride, playing games,
+              or hanging out with friends. Good people, good conversations, and
+              getting outside are some of my favorite ways to spend a day.
+            </p>
+          </Motion.div>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a
@@ -277,15 +262,32 @@ export default function App() {
       </section>
 
       <section className="relative mx-auto max-w-7xl px-5 pb-16 sm:px-8">
-        <div className="grid gap-4 md:grid-cols-3">
-          {lifeIcons.map(([label, icon]) => {
-            const LifeIcon = icon;
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-800 dark:text-cyan-200">Cards of my Life</p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {lifeItems.map((item) => {
+            const LifeIcon = lifeIconMap[item.icon] || FaRunning;
 
             return (
-              <div key={label} className="group rounded-[2rem] border-2 border-slate-950 bg-white p-6 text-slate-950 shadow-[7px_7px_0_#000] transition hover:-translate-y-1 hover:shadow-[10px_10px_0_#000]">
-                <LifeIcon className="text-4xl text-cyan-700 transition group-hover:rotate-6" />
-                <p className="mt-8 text-2xl font-black">{label}</p>
-                <p className="mt-2 text-slate-600">Part of the routine when I am not staring at code.</p>
+              <div key={item.label} className="group rounded-[2rem] border-2 border-slate-950 bg-white p-6 text-slate-950 shadow-[7px_7px_0_#000] transition hover:-translate-y-1 hover:shadow-[10px_10px_0_#000]">
+                <div className="flex items-center gap-4">
+                  <LifeIcon className="text-4xl text-cyan-700 transition group-hover:rotate-6" />
+                  <p className="text-2xl font-black">{item.label}</p>
+                </div>
+                <p className="mt-5 text-slate-600">{item.description}</p>
+                {item.pills?.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {item.pills.map((pill) => (
+                      <span key={pill} className="rounded-full border-2 border-slate-950 bg-cyan-100 px-3 py-1 text-xs font-black text-cyan-950">
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}
@@ -295,12 +297,9 @@ export default function App() {
       <section id="stack" className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-800 dark:text-cyan-200">Stack Meter</p>
-            <h2 className="mt-3 text-5xl font-black tracking-[-0.065em] sm:text-7xl">The stuff I reach for.</h2>
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-800 dark:text-cyan-200">Stack</p>
+            <h2 className="mt-3 text-5xl font-black tracking-[-0.065em] sm:text-7xl">What I like to use.</h2>
           </div>
-          <p className="max-w-xl text-slate-600 dark:text-stone-300">
-            These levels live in `src/data/portfolio.json`, so they are easy to adjust without digging through the page.
-          </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -337,7 +336,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="build" className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8">
+{/*      <section id="build" className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-amber-700 dark:text-amber-200">Build Style</p>
           <h2 className="mt-3 text-5xl font-black tracking-[-0.065em] sm:text-7xl">I like useful software with a little personality.</h2>
@@ -353,15 +352,11 @@ export default function App() {
           ))}
         </div>
       </section>
-
+*/}
       <section className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="overflow-hidden rounded-[2.5rem] border-4 border-slate-950 bg-white p-8 text-slate-950 shadow-[12px_12px_0_#000] transition-colors duration-500 dark:bg-slate-100 sm:p-12">
           <div className="mb-8 max-w-3xl">
             <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-800">Projects</p>
-            <h2 className="mt-3 text-5xl font-black tracking-[-0.065em]">Project shelf, currently with placeholders.</h2>
-            <p className="mt-5 text-lg leading-8 text-slate-700">
-              These dummy projects live in `src/data/portfolio.json`. Swap the names, links, tech, and descriptions when the real ones are ready.
-            </p>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-3">
@@ -398,7 +393,7 @@ export default function App() {
       <footer id="contact" className="relative mx-auto flex max-w-7xl flex-col gap-8 border-t border-slate-950/10 px-5 py-12 sm:px-8 dark:border-white/10 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-2xl font-black">Stephen Clem</p>
-          <p className="mt-2 text-slate-600 dark:text-stone-400">Full-stack engineer. Runner. Biker. Always down for a good food spot.</p>
+          <p className="mt-2 text-slate-600 dark:text-stone-400"></p>
         </div>
         <div className="flex gap-3">
           {links.map(([label, href, icon]) => {

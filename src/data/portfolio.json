@@ -2,68 +2,73 @@
   "pictures": [
     {
       "id": "portrait",
-      "title": "In Build Mode",
-      "kicker": "Usually making something cleaner",
-      "image": "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/456053365_10231329521194370_24548638188880072_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=qHsuPuABqNIQ7kNvwE0_7Rn&_nc_oc=Adl3HH5tyNKlsMQCuH-RTXYqqywmG3dUnBzxNRe3TozdNuPgXL7_x_OzAyQICN9Ul6Y&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=7nE3rXi6AWJFcm7jZe2ctA&oh=00_AfesdfjpJ0M3oigNS2YwGJeBIZKVgyxjfqBu3CIfWWFoBg&oe=68F4A57E",
+      "title": "I'm Stephen",
+      "kicker": "Hi there!",
+      "image": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/456053365_10231329521194370_24548638188880072_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=BoohAsOyOnMQ7kNvwGkH50w&_nc_oc=Adr7WM1oPJyy6OnJjy4O1YPJY0YU2tq0Lm9BMDPlgCTyLCdMG2RXKDXCdX6SBF9ozTLfHi_ffTQZc8kqwrxGHU4N&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=ciODfYfngTNSGR77JXr7yA&_nc_ss=7b2a8&oh=00_Af5gwVsM1OWaFLOUcctKF4nFmlseVZRuSWrvPQD-v5oQeg&oe=6A21033E",
       "position": "object-top"
     },
     {
       "id": "running",
-      "title": "Run It Out",
-      "kicker": "Where half the debugging happens",
-      "image": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=900&q=80",
+      "title": "Have a look around",
+      "kicker": "Welcome to my page!",
+      "image": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.6435-9/66511313_10218029498582117_4315187344899571712_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=OZr7gkfIp3YQ7kNvwEBrinB&_nc_oc=AdprIt3DmQU_-so0Z6795CmE09tFW0VbeHwpo2fhx72ucNHBX3y9dYEgJS_ZPzojjPknYr_Eo4TuUOEK04bHsSQF&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=WTA_MWhHsaY5-B12gZwPNw&_nc_ss=7b2a8&oh=00_Af6eec-VCYjlxRWmCsqFK09NA3F5M6dXPhMToHbi79b45A&oe=6A42B8DD",
       "position": "object-center"
     },
     {
       "id": "biking",
-      "title": "Bike Reset",
-      "kicker": "Good miles fix a lot",
-      "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=900&q=80",
-      "position": "object-center"
-    },
-    {
-      "id": "food",
-      "title": "Food Spot Mode",
-      "kicker": "Always taking recommendations",
-      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+      "title": "Life's a garden, dig it",
+      "kicker": "I don't know what else to put, so I'm just throwing things out there",
+      "image": "https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/487102602_10234144603569670_3336302194852942850_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=WbyUYtsypwwQ7kNvwH5HkOs&_nc_oc=AdpR7Z6MgLh1stw1NiPHJJ4t8bkEo3bGSEyu_ddmhH43feh6vs_nmhz6aHZfQYDeOXkv8_rmhKMaq4aWxk3VkFfx&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=6SjMuORNVo5xPV0M4JuYFQ&_nc_ss=7b2a8&oh=00_Af45cNsLrt9KIE8lszclFy3z3vOPxfI4I_RnP90EHB02DQ&oe=6A21035D",
       "position": "object-center"
     }
   ],
+  "life": [
+    {
+      "label": "Running",
+      "icon": "running",
+      "description": "Way for me to clear my head.",
+      "pills": ["5k", "10k", "Half", "Full"]
+    },
+    {
+      "label": "Biking",
+      "icon": "biking",
+      "description": "Endurance has always been a passion.",
+      "pills": ["Adventure", "Group Rides", "Town Hop"]
+    },
+    {
+      "label": "Gaming",
+      "icon": "gaming",
+      "description": "Stay gaming bro",
+      "pills": ["Overwatch", "Bioshock", "Kingdom Hearts", "Sonic", "Board Games"]
+    },
+    {
+      "label": "Building",
+      "icon": "computer",
+      "description": "I have a passion for making life easier through technology",
+      "pills": ["Technology", "Code", "Chill"]
+    }
+  ],
   "skills": [
-    { "name": "Python", "level": 92 },
-    { "name": "Django", "level": 90 },
-    { "name": "React", "level": 86 },
-    { "name": "PostgreSQL", "level": 84 },
-    { "name": "TypeScript", "level": 82 },
-    { "name": "Docker", "level": 80 },
-    { "name": "Ruby", "level": 78 },
-    { "name": "Rails", "level": 78 },
-    { "name": "AWS", "level": 76 },
-    { "name": "Kubernetes", "level": 74 },
-    { "name": "Go", "level": 72 },
-    { "name": "Angular", "level": 68 }
+    { "name": "Python", "level": 70 },
+    { "name": "Django", "level": 75 },
+    { "name": "React", "level":  65},
+    { "name": "PostgreSQL", "level": 90 },
+    { "name": "TypeScript", "level": 50 },
+    { "name": "Docker", "level": 95 },
+    { "name": "Ruby", "level": 80 },
+    { "name": "Ruby on Rails", "level": 70 },
+    { "name": "AWS", "level": 70 },
+    { "name": "Kubernetes", "level": 85 },
+    { "name": "Go", "level": 30 },
+    { "name": "Angular", "level": 25 }
   ],
   "projects": [
     {
-      "name": "TrailMix API",
-      "status": "Idea I would use",
-      "description": "A Django + PostgreSQL API for keeping runs, bike rides, food stops, and route notes in one place because my brain likes a map.",
-      "tech": ["Python", "Django", "PostgreSQL", "Docker"],
-      "link": "https://github.com/stephen-clem"
-    },
-    {
-      "name": "Deploy Deck",
-      "status": "Less chaos please",
-      "description": "A Rails dashboard for deployments, service health, and release notes that does not require five tabs and a small prayer.",
-      "tech": ["Ruby", "Rails", "AWS", "Kubernetes"],
-      "link": "https://github.com/stephen-clem"
-    },
-    {
-      "name": "Flavor Finder",
-      "status": "For the food list",
-      "description": "A React + TypeScript app for saving restaurant ideas, remembering the good dishes, and sharing food spot shortlists.",
-      "tech": ["React", "TypeScript", "Go", "PostgreSQL"],
-      "link": "https://github.com/stephen-clem"
+      "name": "Marty McSleeves",
+      "status": "Hackathon Project",
+      "description": "Ever seen Back to the Future 2? This fun hardware Hackathon project was and effort to recreated the self-adjusting jacket with retractable sleeves! Complete with an api interface.", 
+      "tech": ["Adruino", "HTML", "Javascript", "Spark Core"],
+      "link": "https://www.hackster.io/team-marty-mcsleeves/marty-mcsleeves-0c51a6"
     }
   ]
 }
