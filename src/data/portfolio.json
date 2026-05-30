@@ -66,7 +66,7 @@
     {
       "name": "Marty McSleeves",
       "status": "Hackathon Project",
-      "description": "Ever seen Back to the Future 2? This fun hardware Hackathon project was and effort to recreated the self-adjusting jacket with retractable sleeves! Complete with an api interface.", 
+      "description": "Ever seen Back to the Future 2? This fun hardware hackathon project is an effort to recreated the iconic self-adjusting jacket with retractable sleeves! Complete with an api interface.",
       "tech": ["Adruino", "HTML", "Javascript", "Spark Core"],
       "link": "https://www.hackster.io/team-marty-mcsleeves/marty-mcsleeves-0c51a6"
     }
